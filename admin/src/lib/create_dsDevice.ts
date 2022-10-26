@@ -9,6 +9,7 @@ import {
     sensorSetting,
     watchStateID,
 } from '../types/dsDevice';
+import { scenes } from './Scenes';
 
 export const createDevice = (deviceType: { type: string; function?: string }): dsDevice | null => {
     if (deviceType.type === 'lamp') {
@@ -77,6 +78,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                         groups: [1],
                     },
                 ],
+                scenes: scenes,
             },
         };
         if (deviceType.function !== undefined) {
@@ -121,13 +123,15 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
             deviceType: Config.deviceType,
             id: `${genDSUID(5)}_${genDSUID(5)}`,
             watchStateID: {
-                switch: Config.OnOffSelectID,
-                switchModeColor: Config.ColorModeSelectID,
+                //switch: Config.OnOffSelectID,
+                //switchModeColor: Config.ColorModeSelectID,
                 brightness: Config.DimmerSelectID,
                 colortemp: Config.ColorTempSelectID,
                 hue: Config.HueSelectID,
                 saturation: Config.SaturationSelectID,
-                rgb: Config.RGBSelectID,
+                //rgb: Config.RGBSelectID,
+                x: '',
+                y: '',
             },
             dsConfig: {
                 dSUID: genDSUID(34),
@@ -240,6 +244,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                         groups: [1],
                     },
                 ],
+                scenes: scenes,
             },
         };
     }
