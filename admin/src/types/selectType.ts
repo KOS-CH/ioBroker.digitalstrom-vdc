@@ -1,7 +1,7 @@
 export type SelectType =
     | 'lamp'
-    | 'rgbLamp'
-    | 'colorMode'
+    | 'cieX'
+    | 'cieY'
     | 'colorTemp'
     | 'dimmer'
     | 'hue'

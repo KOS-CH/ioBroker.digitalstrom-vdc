@@ -48,12 +48,12 @@ interface Config {
     unitValue: string;
     sensorMultiplier: number;
     OnOffSelectID: string;
-    ColorModeSelectID: string;
+    cieYSelectID: string;
     ColorTempSelectID: string;
     DimmerSelectID: string;
     HueSelectID: string;
     SaturationSelectID: string;
-    RGBSelectID: string;
+    cieXSelectID: string;
     sensorSelectID: any;
     buttonSelectID: string;
     buttonSelectID1: string;
@@ -102,12 +102,12 @@ export const initialConfig = {
         unitValue: '',
         sensorMultiplier: 1,
         OnOffSelectID: '',
-        ColorModeSelectID: '',
+        cieYSelectID: '',
         ColorTempSelectID: '',
         DimmerSelectID: '',
         HueSelectID: '',
         SaturationSelectID: '',
-        RGBSelectID: '',
+        cieXSelectID: '',
         sensorSelectID: '',
         buttonSelectID: '',
         buttonSelectID1: '',
@@ -156,12 +156,12 @@ export let Config: Config = {
     unitValue: '',
     sensorMultiplier: 1,
     OnOffSelectID: '',
-    ColorModeSelectID: '',
+    cieYSelectID: '',
     ColorTempSelectID: '',
     DimmerSelectID: '',
     HueSelectID: '',
     SaturationSelectID: '',
-    RGBSelectID: '',
+    cieXSelectID: '',
     sensorSelectID: '',
     buttonSelectID: '',
     buttonSelectID1: '',

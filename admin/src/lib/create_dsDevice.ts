@@ -123,15 +123,12 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
             deviceType: Config.deviceType,
             id: `${genDSUID(5)}_${genDSUID(5)}`,
             watchStateID: {
-                //switch: Config.OnOffSelectID,
-                //switchModeColor: Config.ColorModeSelectID,
                 brightness: Config.DimmerSelectID,
-                colortemp: Config.ColorTempSelectID,
                 hue: Config.HueSelectID,
                 saturation: Config.SaturationSelectID,
-                //rgb: Config.RGBSelectID,
-                x: '',
-                y: '',
+                colortemp: Config.ColorTempSelectID,
+                x: Config.cieXSelectID,
+                y: Config.cieYSelectID,
             },
             dsConfig: {
                 dSUID: genDSUID(34),

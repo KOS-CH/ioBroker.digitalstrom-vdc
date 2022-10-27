@@ -45,6 +45,8 @@
   "inputUsageOptions-inputUsageRoom": "La camera",
   "inputUsageOptions-inputUsageUndefined": "Non definito",
   "lampComponent-SelectID": "",
+  "lampComponent-cieXSelectButton": "",
+  "lampComponent-cieYSelectButton": "",
   "lampComponent-colorModeSelectButton": "",
   "lampComponent-colorModeSelectID": "",
   "lampComponent-colorTempSelectButton": "",

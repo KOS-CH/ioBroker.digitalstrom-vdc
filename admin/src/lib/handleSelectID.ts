@@ -10,17 +10,17 @@ export const handleSelectId = (select: string | undefined, deviceType: SelectTyp
             console.log(Config);
         }
     }
-    if (deviceType === 'rgbLamp') {
+    if (deviceType === 'cieX') {
         if (select !== undefined) {
-            console.log('rgbLamp');
-            Config.RGBSelectID = select;
+            console.log('cieX');
+            Config.cieXSelectID = select;
             console.log(Config);
         }
     }
-    if (deviceType === 'colorMode') {
+    if (deviceType === 'cieY') {
         if (select !== undefined) {
-            console.log('colorMode');
-            Config.ColorModeSelectID = select;
+            console.log('cieY');
+            Config.cieYSelectID = select;
             console.log(Config);
         }
     }

@@ -45,6 +45,8 @@
   "inputUsageOptions-inputUsageRoom": "Habitación",
   "inputUsageOptions-inputUsageUndefined": "Indefinido",
   "lampComponent-SelectID": "",
+  "lampComponent-cieXSelectButton": "",
+  "lampComponent-cieYSelectButton": "",
   "lampComponent-colorModeSelectButton": "",
   "lampComponent-colorModeSelectID": "",
   "lampComponent-colorTempSelectButton": "",

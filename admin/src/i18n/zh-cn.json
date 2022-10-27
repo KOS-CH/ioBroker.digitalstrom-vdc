@@ -45,6 +45,8 @@
   "inputUsageOptions-inputUsageRoom": "房间",
   "inputUsageOptions-inputUsageUndefined": "未定义",
   "lampComponent-SelectID": "",
+  "lampComponent-cieXSelectButton": "",
+  "lampComponent-cieYSelectButton": "",
   "lampComponent-colorModeSelectButton": "",
   "lampComponent-colorModeSelectID": "",
   "lampComponent-colorTempSelectButton": "",

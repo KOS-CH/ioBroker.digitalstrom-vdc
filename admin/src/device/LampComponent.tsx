@@ -216,16 +216,16 @@ export const LampComponent: React.FC<LampComponentProps> = ({ api, clearInput })
                         }}
                     >
                         <SelectID
-                            title={'lampComponent-onOffSelectID'}
-                            type={'lamp'}
-                            buttonTitle={'lampComponent-onOffSelectButton'}
+                            title={'lampComponent-dimmerSelectID'}
+                            type={'dimmer'}
+                            buttonTitle={'lampComponent-dimmerSelectButton'}
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
                         <SelectID
-                            title={'lampComponent-dimmerSelectID'}
-                            type={'dimmer'}
-                            buttonTitle={'lampComponent-dimmerSelectButton'}
+                            title={'lampComponent-hueSelectID'}
+                            type={'hue'}
+                            buttonTitle={'lampComponent-hueSelectButton'}
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
@@ -244,9 +244,9 @@ export const LampComponent: React.FC<LampComponentProps> = ({ api, clearInput })
                         }}
                     >
                         <SelectID
-                            title={'lampComponent-colorModeSelectID'}
-                            type={'colorMode'}
-                            buttonTitle={'lampComponent-colorModeSelectButton'}
+                            title={'lampComponent-saturationSelectID'}
+                            type={'saturation'}
+                            buttonTitle={'lampComponent-saturationSelectButton'}
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
@@ -272,23 +272,16 @@ export const LampComponent: React.FC<LampComponentProps> = ({ api, clearInput })
                         }}
                     >
                         <SelectID
-                            title={'lampComponent-hueSelectID'}
-                            type={'hue'}
-                            buttonTitle={'lampComponent-hueSelectButton'}
+                            title={'lampComponent-cieXSelectID'}
+                            type={'cieX'}
+                            buttonTitle={'lampComponent-cieXSelectButton'}
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
                         <SelectID
-                            title={'lampComponent-saturationSelectID'}
-                            type={'saturation'}
-                            buttonTitle={'lampComponent-saturationSelectButton'}
-                            clear={clear}
-                            onSelect={(selectId, type) => handleSelectId(selectId, type)}
-                        />
-                        <SelectID
-                            title={'lampComponent-rgbSelectID'}
-                            type={'rgbLamp'}
-                            buttonTitle={'lampComponent-rgbSelectButton'}
+                            title={'lampComponent-cieYSelectID'}
+                            type={'cieY'}
+                            buttonTitle={'lampComponent-cieYSelectButton'}
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
