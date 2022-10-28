@@ -285,6 +285,13 @@ export const LampComponent: React.FC<LampComponentProps> = ({ api, clearInput })
                             clear={clear}
                             onSelect={(selectId, type) => handleSelectId(selectId, type)}
                         />
+                        <SelectID
+                            title={'lampComponent-onOffSelectID'}
+                            type={'lamp'}
+                            buttonTitle={'lampComponent-onOffSelectButton'}
+                            clear={clear}
+                            onSelect={(selectId, type) => handleSelectId(selectId, type)}
+                        />
                     </Grid>
                 </React.Fragment>
             )}

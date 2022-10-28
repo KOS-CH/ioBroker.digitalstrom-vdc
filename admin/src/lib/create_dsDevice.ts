@@ -16,7 +16,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
         const device: dsDevice = {
             name: Config.name,
             deviceType: Config.deviceType,
-            watchStateID: { light: Config.OnOffSelectID },
+            watchStateID: { switch: Config.OnOffSelectID },
             id: `${genDSUID(5)}_${genDSUID(5)}`,
             dsConfig: {
                 dSUID: genDSUID(34),
@@ -129,6 +129,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                 colortemp: Config.ColorTempSelectID,
                 x: Config.cieXSelectID,
                 y: Config.cieYSelectID,
+                switch: Config.OnOffSelectID,
             },
             dsConfig: {
                 dSUID: genDSUID(34),
