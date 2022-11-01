@@ -141,78 +141,87 @@ class DigitalstromVdc extends utils.Adapter {
       }
     });
     vdc.on("VDSM_NOTIFICATION_SAVE_SCENE", (msg) => {
-      this.log.debug(`received save scene event ${JSON.stringify(msg)}`);
-      if (msg && msg.dSUID) {
-        msg.dSUID.forEach(async (id) => {
-          const affectedDevice = this.allDevices.backEnd.find((d) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase());
-          let dontCare;
-          if (affectedDevice) {
+      try {
+        this.log.debug(`received save scene event ${JSON.stringify(msg)}`);
+        if (msg && msg.dSUID) {
+          msg.dSUID.forEach(async (id) => {
+            const affectedDevice = this.allDevices.backEnd.find((d) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase());
+            let dontCare;
+            affectedDevice.scenes = affectedDevice.scenes.filter((d) => d.sceneId != msg.scene);
+            if (affectedDevice) {
+              const dScene = affectedDevice.scenes.find((s) => {
+                return s.sceneId == msg.scene;
+              });
+              if (dScene) {
+                let key2;
+                let value2;
+                this.log.debug(`looking for dontCare value inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
+                for ([key2, value2] of Object.entries(dScene.values)) {
+                  if (key2 == "dontCare")
+                    dontCare = value2;
+                }
+              } else
+                dontCare = false;
+              const sceneVals = {};
+              let key;
+              let value;
+              for ([key, value] of Object.entries(affectedDevice.watchStateID)) {
+                const state = await this.getForeignStateAsync(value);
+                if (!affectedDevice.scenes) {
+                  affectedDevice.scenes = [];
+                }
+                sceneVals[key] = { value: state.val, dontCare };
+              }
+              affectedDevice.scenes = affectedDevice.scenes.filter((d) => d.sceneId != msg.scene);
+              affectedDevice.scenes.push({ sceneId: msg.scene, values: sceneVals });
+              this.log.debug(`Set scene ${msg.scene} on ${affectedDevice.name} ::: ${JSON.stringify(this.allDevices.backEnd)}`);
+              await this.setObjectAsync(`digitalstrom-vdc.0.DS-Devices.configuredDevices.${affectedDevice.id}`, {
+                type: "state",
+                common: {
+                  name: affectedDevice.name,
+                  type: "boolean",
+                  role: "indicator",
+                  read: true,
+                  write: true
+                },
+                native: {
+                  deviceObj: affectedDevice
+                }
+              }).then(async (success) => {
+                this.log.debug(`Device created ${success}`);
+                this.allDevices = await this.refreshDeviceList();
+              });
+            }
+          });
+        }
+      } catch (e) {
+        this.log.error(`received an error in SaveScene ${e.message}, stack ${e.stack}`);
+      }
+    });
+    vdc.on("VDSM_NOTIFICATION_CALL_SCENE", (msg) => {
+      try {
+        this.log.debug(`received call scene event ${JSON.stringify(msg)}`);
+        if (msg && msg.dSUID) {
+          msg.dSUID.forEach((id) => {
+            const affectedDevice = this.allDevices.backEnd.find((d) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase());
+            this.log.debug(JSON.stringify(affectedDevice));
             const dScene = affectedDevice.scenes.find((s) => {
               return s.sceneId == msg.scene;
             });
             if (dScene) {
-              let key2;
-              let value2;
-              this.log.debug(`looking for dontCare value inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
-              for ([key2, value2] of Object.entries(dScene.values)) {
-                if (key2 == "dontCare")
-                  dontCare = value2;
+              let key;
+              let value;
+              this.log.debug(`looping the values inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
+              for ([key, value] of Object.entries(dScene.values)) {
+                this.log.debug(`performing update on state: ${key} ${JSON.stringify(affectedDevice.watchStateID)} with key ${key} value ${value.value}`);
+                this.log.debug(`setting ${value.value} of ${affectedDevice.name} to on ${affectedDevice.watchStateID[key]}`);
+                this.setForeignState(affectedDevice.watchStateID[key], value.value);
               }
-            } else
-              dontCare = false;
-            const sceneVals = {};
-            let key;
-            let value;
-            for ([key, value] of Object.entries(affectedDevice.watchStateID)) {
-              const state = await this.getForeignStateAsync(value);
-              if (!affectedDevice.scenes) {
-                affectedDevice.scenes = [];
-              }
-              sceneVals[key] = { value: state.val, dontCare };
             }
-            affectedDevice.scenes = affectedDevice.scenes.filter((d) => d.sceneId != msg.scene);
-            affectedDevice.scenes.push({ sceneId: msg.scene, values: sceneVals });
-            this.log.debug(`Set scene ${msg.scene} on ${affectedDevice.name} ::: ${JSON.stringify(this.allDevices.backEnd)}`);
-            await this.setObjectAsync(`digitalstrom-vdc.0.DS-Devices.configuredDevices.${affectedDevice.id}`, {
-              type: "state",
-              common: {
-                name: affectedDevice.name,
-                type: "boolean",
-                role: "indicator",
-                read: true,
-                write: true
-              },
-              native: {
-                deviceObj: affectedDevice
-              }
-            }).then(async (success) => {
-              this.log.debug(`Device created ${success}`);
-              this.allDevices = await this.refreshDeviceList();
-            });
-          }
-        });
-      }
-    });
-    vdc.on("VDSM_NOTIFICATION_CALL_SCENE", (msg) => {
-      this.log.debug(`received call scene event ${JSON.stringify(msg)}`);
-      if (msg && msg.dSUID) {
-        msg.dSUID.forEach((id) => {
-          const affectedDevice = this.allDevices.backEnd.find((d) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase());
-          this.log.debug(JSON.stringify(affectedDevice));
-          const dScene = affectedDevice.scenes.find((s) => {
-            return s.sceneId == msg.scene;
           });
-          if (dScene) {
-            let key;
-            let value;
-            this.log.debug(`looping the values inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
-            for ([key, value] of Object.entries(dScene.values)) {
-              this.log.debug(`performing update on state: ${key} ${JSON.stringify(affectedDevice.watchStateID)} with key ${key} value ${value.value}`);
-              this.log.debug(`setting ${value.value} of ${affectedDevice.name} to on ${affectedDevice.watchStateID[key]}`);
-              this.setForeignState(affectedDevice.watchStateID[key], value.value);
-            }
-          }
-        });
+        }
+      } catch (e) {
+        this.log.error(`received an error in CallScene ${e.message}, stack ${e.stack}`);
       }
     });
     vdc.on("channelStatesRequest", async (msg) => {

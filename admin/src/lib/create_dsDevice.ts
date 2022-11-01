@@ -10,6 +10,9 @@ import {
     watchStateID,
 } from '../types/dsDevice';
 import { scenes } from './Scenes';
+import { colortempscenes } from './ColortempScenes';
+import { dimmerscenes } from './DimmerScenes';
+import { switchscenes } from './SwitchScenes';
 
 export const createDevice = (deviceType: { type: string; function?: string }): dsDevice | null => {
     if (deviceType.type === 'lamp') {
@@ -78,19 +81,21 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                         groups: [1],
                     },
                 ],
-                scenes: scenes,
             },
+            //scenes: scenes,
         };
         if (deviceType.function !== undefined) {
             if (parseFloat(deviceType.function) === 0) {
                 if (device.dsConfig.outputDescription) {
                     device.dsConfig.outputDescription[0].function = 0;
+                    device.scenes = switchscenes;
                 }
             }
             if (parseFloat(deviceType.function) === 1) {
                 if (device.dsConfig.outputDescription) {
                     device.dsConfig.outputDescription[0].function = 1;
                     device.watchStateID.brightness = Config.DimmerSelectID;
+                    device.scenes = dimmerscenes;
                 }
             }
             if (parseFloat(deviceType.function) === 3) {
@@ -98,6 +103,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                     device.dsConfig.outputDescription[0].function = 3;
                     device.watchStateID.brightness = Config.DimmerSelectID;
                     device.watchStateID.colortemp = Config.ColorTempSelectID;
+                    device.scenes = colortempscenes;
                     if (device.dsConfig.channelDescriptions) {
                         device.dsConfig.channelDescriptions.push({
                             colortemp: {
@@ -242,8 +248,8 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                         groups: [1],
                     },
                 ],
-                scenes: scenes,
             },
+            scenes: scenes,
         };
     }
     if (deviceType.type === 'button') {

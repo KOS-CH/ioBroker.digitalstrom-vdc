@@ -4,6 +4,7 @@ export type dsDevice = {
     watchStateID: watchStateID;
     modifiers?: modifiers;
     id: string;
+    scenes?: scenes[] | colortempscenes[] | switchscenes[] | dimmerscenes[] | undefined;
     dsConfig: dsConfig;
 };
 
@@ -49,7 +50,6 @@ export type dsConfig = {
     binaryInputSettings?: [binaryInputSetting];
     buttonInputDescriptions?: [buttonInputDescription];
     buttonInputSettings?: [buttonInputSetting];
-    scenes?: scenes[];
 };
 
 /**
@@ -466,6 +466,10 @@ export type colorGroup = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 export type scenes = {
     sceneId: number;
     values: {
+        switch: {
+            value: boolean;
+            dontCare: boolean;
+        };
         brightness: {
             value: number;
             dontCare: boolean;
@@ -488,6 +492,48 @@ export type scenes = {
         };
         y: {
             value: string;
+            dontCare: boolean;
+        };
+    };
+};
+
+export type colortempscenes = {
+    sceneId: number;
+    values: {
+        switch: {
+            value: boolean;
+            dontCare: boolean;
+        };
+        brightness: {
+            value: number;
+            dontCare: boolean;
+        };
+        colortemp: {
+            value: string;
+            dontCare: boolean;
+        };
+    };
+};
+
+export type switchscenes = {
+    sceneId: number;
+    values: {
+        switch: {
+            value: boolean;
+            dontCare: boolean;
+        };
+    };
+};
+
+export type dimmerscenes = {
+    sceneId: number;
+    values: {
+        switch: {
+            value: boolean;
+            dontCare: boolean;
+        };
+        brightness: {
+            value: number;
             dontCare: boolean;
         };
     };

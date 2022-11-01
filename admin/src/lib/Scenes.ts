@@ -2,6 +2,10 @@ export const scenes = [
     {
         sceneId: 0,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -31,6 +35,10 @@ export const scenes = [
     {
         sceneId: 1,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -60,6 +68,10 @@ export const scenes = [
     {
         sceneId: 2,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -89,6 +101,10 @@ export const scenes = [
     {
         sceneId: 3,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -118,6 +134,10 @@ export const scenes = [
     {
         sceneId: 4,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -147,6 +167,10 @@ export const scenes = [
     {
         sceneId: 5,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -176,6 +200,10 @@ export const scenes = [
     {
         sceneId: 6,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -205,6 +233,10 @@ export const scenes = [
     {
         sceneId: 7,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -234,6 +266,10 @@ export const scenes = [
     {
         sceneId: 8,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -263,6 +299,10 @@ export const scenes = [
     {
         sceneId: 9,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -292,6 +332,10 @@ export const scenes = [
     {
         sceneId: 10,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -321,6 +365,10 @@ export const scenes = [
     {
         sceneId: 11,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -350,6 +398,10 @@ export const scenes = [
     {
         sceneId: 12,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -379,6 +431,10 @@ export const scenes = [
     {
         sceneId: 13,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -408,6 +464,10 @@ export const scenes = [
     {
         sceneId: 14,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -437,6 +497,10 @@ export const scenes = [
     {
         sceneId: 15,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -466,6 +530,10 @@ export const scenes = [
     {
         sceneId: 16,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -495,6 +563,10 @@ export const scenes = [
     {
         sceneId: 17,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 75,
                 dontCare: false,
@@ -524,6 +596,10 @@ export const scenes = [
     {
         sceneId: 18,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 50,
                 dontCare: false,
@@ -553,6 +629,10 @@ export const scenes = [
     {
         sceneId: 19,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 25,
                 dontCare: false,
@@ -582,6 +662,10 @@ export const scenes = [
     {
         sceneId: 20,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 75,
                 dontCare: false,
@@ -611,6 +695,10 @@ export const scenes = [
     {
         sceneId: 21,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 50,
                 dontCare: false,
@@ -640,6 +728,10 @@ export const scenes = [
     {
         sceneId: 22,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 25,
                 dontCare: false,
@@ -669,6 +761,10 @@ export const scenes = [
     {
         sceneId: 23,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 75,
                 dontCare: false,
@@ -698,6 +794,10 @@ export const scenes = [
     {
         sceneId: 24,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 65,
                 dontCare: false,
@@ -727,6 +827,10 @@ export const scenes = [
     {
         sceneId: 25,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 64,
                 dontCare: false,
@@ -756,6 +860,10 @@ export const scenes = [
     {
         sceneId: 26,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 75,
                 dontCare: false,
@@ -785,6 +893,10 @@ export const scenes = [
     {
         sceneId: 27,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 65,
                 dontCare: false,
@@ -814,6 +926,10 @@ export const scenes = [
     {
         sceneId: 28,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 25,
                 dontCare: false,
@@ -843,6 +959,10 @@ export const scenes = [
     {
         sceneId: 29,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 75,
                 dontCare: false,
@@ -872,6 +992,10 @@ export const scenes = [
     {
         sceneId: 30,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 65,
                 dontCare: false,
@@ -901,6 +1025,10 @@ export const scenes = [
     {
         sceneId: 31,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 25,
                 dontCare: false,
@@ -930,6 +1058,10 @@ export const scenes = [
     {
         sceneId: 32,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -959,6 +1091,10 @@ export const scenes = [
     {
         sceneId: 33,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -988,6 +1124,10 @@ export const scenes = [
     {
         sceneId: 34,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1017,6 +1157,10 @@ export const scenes = [
     {
         sceneId: 35,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -1046,6 +1190,10 @@ export const scenes = [
     {
         sceneId: 36,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1075,6 +1223,10 @@ export const scenes = [
     {
         sceneId: 37,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -1104,6 +1256,10 @@ export const scenes = [
     {
         sceneId: 38,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1133,6 +1289,10 @@ export const scenes = [
     {
         sceneId: 39,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -1162,6 +1322,10 @@ export const scenes = [
     {
         sceneId: 40,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1191,6 +1355,10 @@ export const scenes = [
     {
         sceneId: 41,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1220,6 +1388,10 @@ export const scenes = [
     {
         sceneId: 42,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1249,6 +1421,10 @@ export const scenes = [
     {
         sceneId: 43,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1278,6 +1454,10 @@ export const scenes = [
     {
         sceneId: 44,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1307,6 +1487,10 @@ export const scenes = [
     {
         sceneId: 45,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1336,6 +1520,10 @@ export const scenes = [
     {
         sceneId: 46,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1365,6 +1553,10 @@ export const scenes = [
     {
         sceneId: 47,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1394,6 +1586,10 @@ export const scenes = [
     {
         sceneId: 48,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1423,6 +1619,10 @@ export const scenes = [
     {
         sceneId: 49,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1452,6 +1652,10 @@ export const scenes = [
     {
         sceneId: 50,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1481,6 +1685,10 @@ export const scenes = [
     {
         sceneId: 51,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -1510,6 +1718,10 @@ export const scenes = [
     {
         sceneId: 52,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1539,6 +1751,10 @@ export const scenes = [
     {
         sceneId: 53,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1568,6 +1784,10 @@ export const scenes = [
     {
         sceneId: 54,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1597,6 +1817,10 @@ export const scenes = [
     {
         sceneId: 55,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1626,6 +1850,10 @@ export const scenes = [
     {
         sceneId: 56,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1655,6 +1883,10 @@ export const scenes = [
     {
         sceneId: 57,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1684,6 +1916,10 @@ export const scenes = [
     {
         sceneId: 58,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1713,6 +1949,10 @@ export const scenes = [
     {
         sceneId: 59,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1742,6 +1982,10 @@ export const scenes = [
     {
         sceneId: 60,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1771,6 +2015,10 @@ export const scenes = [
     {
         sceneId: 61,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1800,6 +2048,10 @@ export const scenes = [
     {
         sceneId: 62,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1829,6 +2081,10 @@ export const scenes = [
     {
         sceneId: 63,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1858,6 +2114,10 @@ export const scenes = [
     {
         sceneId: 64,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1887,6 +2147,10 @@ export const scenes = [
     {
         sceneId: 65,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -1916,6 +2180,10 @@ export const scenes = [
     {
         sceneId: 66,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1945,6 +2213,10 @@ export const scenes = [
     {
         sceneId: 67,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -1974,6 +2246,10 @@ export const scenes = [
     {
         sceneId: 68,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2003,6 +2279,10 @@ export const scenes = [
     {
         sceneId: 69,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2032,6 +2312,10 @@ export const scenes = [
     {
         sceneId: 70,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2061,6 +2345,10 @@ export const scenes = [
     {
         sceneId: 71,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2090,6 +2378,10 @@ export const scenes = [
     {
         sceneId: 72,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2119,6 +2411,10 @@ export const scenes = [
     {
         sceneId: 73,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2148,6 +2444,10 @@ export const scenes = [
     {
         sceneId: 74,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2177,6 +2477,10 @@ export const scenes = [
     {
         sceneId: 75,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2206,6 +2510,10 @@ export const scenes = [
     {
         sceneId: 76,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2235,6 +2543,10 @@ export const scenes = [
     {
         sceneId: 77,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2264,6 +2576,10 @@ export const scenes = [
     {
         sceneId: 78,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2293,6 +2609,10 @@ export const scenes = [
     {
         sceneId: 79,
         values: {
+            switch: {
+                value: true,
+                dontCare: false,
+            },
             brightness: {
                 value: 100,
                 dontCare: false,
@@ -2322,6 +2642,10 @@ export const scenes = [
     {
         sceneId: 80,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2351,6 +2675,10 @@ export const scenes = [
     {
         sceneId: 81,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2380,6 +2708,10 @@ export const scenes = [
     {
         sceneId: 82,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2409,6 +2741,10 @@ export const scenes = [
     {
         sceneId: 83,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2438,6 +2774,10 @@ export const scenes = [
     {
         sceneId: 84,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2467,6 +2807,10 @@ export const scenes = [
     {
         sceneId: 85,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2496,6 +2840,10 @@ export const scenes = [
     {
         sceneId: 86,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2525,6 +2873,10 @@ export const scenes = [
     {
         sceneId: 87,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2554,6 +2906,10 @@ export const scenes = [
     {
         sceneId: 88,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2583,6 +2939,10 @@ export const scenes = [
     {
         sceneId: 89,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2612,6 +2972,10 @@ export const scenes = [
     {
         sceneId: 90,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2641,6 +3005,10 @@ export const scenes = [
     {
         sceneId: 91,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2670,6 +3038,10 @@ export const scenes = [
     {
         sceneId: 92,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,
@@ -2699,6 +3071,10 @@ export const scenes = [
     {
         sceneId: 93,
         values: {
+            switch: {
+                value: false,
+                dontCare: false,
+            },
             brightness: {
                 value: 0,
                 dontCare: false,

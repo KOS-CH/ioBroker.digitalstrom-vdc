@@ -209,7 +209,7 @@ class DigitalstromVdc extends utils.Adapter {
             }
         });
 
-        /*      vdc.on('VDSM_NOTIFICATION_SAVE_SCENE', (msg: any) => {
+        /*        vdc.on('VDSM_NOTIFICATION_SAVE_SCENE', (msg: any) => {
             this.log.debug(`received save scene event ${JSON.stringify(msg)}`);
             if (msg && msg.dSUID) {
                 msg.dSUID.forEach(async (id: string) => {
@@ -330,103 +330,112 @@ class DigitalstromVdc extends utils.Adapter {
         });*/
 
         vdc.on('VDSM_NOTIFICATION_SAVE_SCENE', (msg: any) => {
-            this.log.debug(`received save scene event ${JSON.stringify(msg)}`);
-            if (msg && msg.dSUID) {
-                msg.dSUID.forEach(async (id: string) => {
-                    // this.log.debug(`searching for ${id} in ${JSON.stringify(this.config.dsDevices)}`);
-                    const affectedDevice = this.allDevices.backEnd.find(
-                        (d: any) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase(),
-                    );
-                    let dontCare: any;
-                    if (affectedDevice) {
-                        // found device -> looking if scene is already available
-                        const dScene = affectedDevice.scenes.find((s: any) => {
-                            return s.sceneId == msg.scene;
-                        });
-                        if (dScene) {
-                            // scene is already defined... loop it and get value for dc
+            try {
+                this.log.debug(`received save scene event ${JSON.stringify(msg)}`);
+                if (msg && msg.dSUID) {
+                    msg.dSUID.forEach(async (id: string) => {
+                        // this.log.debug(`searching for ${id} in ${JSON.stringify(this.config.dsDevices)}`);
+                        const affectedDevice = this.allDevices.backEnd.find(
+                            (d: any) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase(),
+                        );
+                        let dontCare: any;
+                        affectedDevice.scenes = affectedDevice.scenes.filter((d: any) => d.sceneId != msg.scene);
+                        if (affectedDevice) {
+                            // found device -> looking if scene is already available
+                            const dScene = affectedDevice.scenes.find((s: any) => {
+                                return s.sceneId == msg.scene;
+                            });
+                            if (dScene) {
+                                // scene is already defined... loop it and get value for dc
+                                let key: any;
+                                let value: any;
+                                this.log.debug(
+                                    `looking for dontCare value inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`,
+                                );
+                                for ([key, value] of Object.entries(dScene.values)) {
+                                    if (key == 'dontCare') dontCare = value; // set dontCare to current SceneValue
+                                }
+                            } else dontCare = false; //if Scene not defined until now set dontCare to false
+                            const sceneVals: any = {};
                             let key: any;
                             let value: any;
+                            for ([key, value] of Object.entries(affectedDevice.watchStateID)) {
+                                const state: any = await this.getForeignStateAsync(value);
+                                if (!affectedDevice.scenes) {
+                                    affectedDevice.scenes = [];
+                                }
+                                sceneVals[key] = { value: state.val, dontCare: dontCare }; // set SceneValues
+                            }
+                            affectedDevice.scenes = affectedDevice.scenes.filter((d: any) => d.sceneId != msg.scene);
+                            affectedDevice.scenes.push({ sceneId: msg.scene, values: sceneVals });
                             this.log.debug(
-                                `looking for dontCare value inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`,
+                                `Set scene ${msg.scene} on ${affectedDevice.name} ::: ${JSON.stringify(
+                                    this.allDevices.backEnd,
+                                )}`,
                             );
-                            for ([key, value] of Object.entries(dScene.values)) {
-                                if (key == 'dontCare') dontCare = value; // set dontCare to current SceneValue
-                            }
-                        } else dontCare = false; //if Scene not defined until now set dontCare to false
-                        const sceneVals: any = {};
-                        let key: any;
-                        let value: any;
-                        for ([key, value] of Object.entries(affectedDevice.watchStateID)) {
-                            const state: any = await this.getForeignStateAsync(value);
-                            if (!affectedDevice.scenes) {
-                                affectedDevice.scenes = [];
-                            }
-                            sceneVals[key] = { value: state.val, dontCare: dontCare }; // set SceneValues
+                            // make it persistent by storing it back to the device
+                            await this.setObjectAsync(
+                                `digitalstrom-vdc.0.DS-Devices.configuredDevices.${affectedDevice.id}`,
+                                {
+                                    type: 'state',
+                                    common: {
+                                        name: affectedDevice.name,
+                                        type: 'boolean',
+                                        role: 'indicator',
+                                        read: true,
+                                        write: true,
+                                    },
+                                    native: {
+                                        deviceObj: affectedDevice,
+                                    },
+                                },
+                            ).then(async (success) => {
+                                this.log.debug(`Device created ${success}`);
+                                this.allDevices = await this.refreshDeviceList();
+                            });
                         }
-                        affectedDevice.scenes = affectedDevice.scenes.filter((d: any) => d.sceneId != msg.scene);
-                        affectedDevice.scenes.push({ sceneId: msg.scene, values: sceneVals });
-                        this.log.debug(
-                            `Set scene ${msg.scene} on ${affectedDevice.name} ::: ${JSON.stringify(
-                                this.allDevices.backEnd,
-                            )}`,
-                        );
-                        // make it persistent by storing it back to the device
-                        await this.setObjectAsync(
-                            `digitalstrom-vdc.0.DS-Devices.configuredDevices.${affectedDevice.id}`,
-                            {
-                                type: 'state',
-                                common: {
-                                    name: affectedDevice.name,
-                                    type: 'boolean',
-                                    role: 'indicator',
-                                    read: true,
-                                    write: true,
-                                },
-                                native: {
-                                    deviceObj: affectedDevice,
-                                },
-                            },
-                        ).then(async (success) => {
-                            this.log.debug(`Device created ${success}`);
-                            this.allDevices = await this.refreshDeviceList();
-                        });
-                    }
-                });
+                    });
+                }
+            } catch (e) {
+                this.log.error(`received an error in SaveScene ${e.message}, stack ${e.stack}`);
             }
         });
 
         vdc.on('VDSM_NOTIFICATION_CALL_SCENE', (msg: any) => {
-            this.log.debug(`received call scene event ${JSON.stringify(msg)}`);
-            // search if the dsUID is known
-            if (msg && msg.dSUID) {
-                msg.dSUID.forEach((id: string) => {
-                    const affectedDevice = this.allDevices.backEnd.find(
-                        (d: any) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase(),
-                    );
-                    this.log.debug(JSON.stringify(affectedDevice));
-                    const dScene = affectedDevice.scenes.find((s: any) => {
-                        return s.sceneId == msg.scene;
-                    });
-                    if (dScene) {
-                        // scene is defined... loop it and set all values
-                        let key: any;
-                        let value: any;
-                        this.log.debug(`looping the values inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
-                        for ([key, value] of Object.entries(dScene.values)) {
-                            this.log.debug(
-                                `performing update on state: ${key} ${JSON.stringify(
-                                    affectedDevice.watchStateID,
-                                )} with key ${key} value ${value.value}`,
-                            );
-                            // if (key == "switch") value.value = true; // set power state on
-                            this.log.debug(
-                                `setting ${value.value} of ${affectedDevice.name} to on ${affectedDevice.watchStateID[key]}`,
-                            );
-                            this.setForeignState(affectedDevice.watchStateID[key], value.value);
+            try {
+                this.log.debug(`received call scene event ${JSON.stringify(msg)}`);
+                // search if the dsUID is known
+                if (msg && msg.dSUID) {
+                    msg.dSUID.forEach((id: string) => {
+                        const affectedDevice = this.allDevices.backEnd.find(
+                            (d: any) => d.dsConfig.dSUID.toLowerCase() == id.toLowerCase(),
+                        );
+                        this.log.debug(JSON.stringify(affectedDevice));
+                        const dScene = affectedDevice.scenes.find((s: any) => {
+                            return s.sceneId == msg.scene;
+                        });
+                        if (dScene) {
+                            // scene is defined... loop it and set all values
+                            let key: any;
+                            let value: any;
+                            this.log.debug(`looping the values inside scene ${msg.scene} -> ${JSON.stringify(dScene)}`);
+                            for ([key, value] of Object.entries(dScene.values)) {
+                                this.log.debug(
+                                    `performing update on state: ${key} ${JSON.stringify(
+                                        affectedDevice.watchStateID,
+                                    )} with key ${key} value ${value.value}`,
+                                );
+                                // if (key == "switch") value.value = true; // set power state on
+                                this.log.debug(
+                                    `setting ${value.value} of ${affectedDevice.name} to on ${affectedDevice.watchStateID[key]}`,
+                                );
+                                this.setForeignState(affectedDevice.watchStateID[key], value.value);
+                            }
                         }
-                    }
-                });
+                    });
+                }
+            } catch (e) {
+                this.log.error(`received an error in CallScene ${e.message}, stack ${e.stack}`);
             }
         });
 
