@@ -72,7 +72,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -85,7 +85,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -98,7 +98,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -111,7 +111,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -124,7 +124,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -189,7 +189,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -228,7 +228,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 75,
+                value: 192,
                 dontCare: false,
             },
         },
@@ -241,7 +241,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 50,
+                value: 128,
                 dontCare: false,
             },
         },
@@ -254,7 +254,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 25,
+                value: 64,
                 dontCare: false,
             },
         },
@@ -267,7 +267,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 75,
+                value: 192,
                 dontCare: false,
             },
         },
@@ -280,7 +280,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 50,
+                value: 128,
                 dontCare: false,
             },
         },
@@ -293,7 +293,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 25,
+                value: 64,
                 dontCare: false,
             },
         },
@@ -306,7 +306,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 75,
+                value: 192,
                 dontCare: false,
             },
         },
@@ -345,7 +345,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 75,
+                value: 192,
                 dontCare: false,
             },
         },
@@ -371,7 +371,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 25,
+                value: 64,
                 dontCare: false,
             },
         },
@@ -384,7 +384,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 75,
+                value: 192,
                 dontCare: false,
             },
         },
@@ -410,7 +410,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 25,
+                value: 64,
                 dontCare: false,
             },
         },
@@ -436,7 +436,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -462,7 +462,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -488,7 +488,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -514,7 +514,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -670,7 +670,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -852,7 +852,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -917,7 +917,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -930,7 +930,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -969,7 +969,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -982,7 +982,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -995,7 +995,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -1008,7 +1008,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -1021,7 +1021,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
@@ -1034,7 +1034,7 @@ export const dimmerscenes = [
                 dontCare: false,
             },
             brightness: {
-                value: 100,
+                value: 255,
                 dontCare: false,
             },
         },
