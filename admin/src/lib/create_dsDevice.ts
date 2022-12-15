@@ -103,7 +103,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                     device.dsConfig.outputDescription[0].function = 3;
                     device.watchStateID.brightness = Config.DimmerSelectID;
                     device.watchStateID.colortemp = Config.ColorTempSelectID;
-                    device.scenes = colortempscenes;
+                    device.scenes = dimmerscenes;
                     if (device.dsConfig.channelDescriptions) {
                         device.dsConfig.channelDescriptions.push({
                             colortemp: {
@@ -249,7 +249,7 @@ export const createDevice = (deviceType: { type: string; function?: string }): d
                     },
                 ],
             },
-            scenes: scenes,
+            scenes: dimmerscenes,
         };
     }
     if (deviceType.type === 'button') {
