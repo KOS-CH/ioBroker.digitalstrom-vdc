@@ -476,7 +476,7 @@ class DigitalstromVdc extends utils.Adapter {
             }
         });
 
-        vdc.on('binaryInputStateRequest', async (msg: any) => {
+        /* vdc.on('binaryInputStateRequest', async (msg: any) => {
             this.log.debug(`received request for binaryInputStateRequest ${JSON.stringify(msg)}`);
 
             // search if the dsUID is known
@@ -521,7 +521,7 @@ class DigitalstromVdc extends utils.Adapter {
                     vdc.sendState(msg.value, msg.messageId);
                 }
             }
-        });
+        });*/
 
         vdc.on('binaryInputStateRequest', async (msg: any) => {
             this.log.info(`received request for binaryInputStateRequest ${JSON.stringify(msg)}`);
